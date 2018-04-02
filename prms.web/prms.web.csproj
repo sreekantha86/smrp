@@ -463,6 +463,7 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\_form.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\Shared\_MessageModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

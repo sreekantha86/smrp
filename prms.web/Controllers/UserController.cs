@@ -17,6 +17,7 @@ namespace prms.web.Controllers
             {
                 ViewBag.submitResult = TempData["message"].ToString();
             }
+
             List<User> model = _repo.GetuserList();
             return View(model);
         }

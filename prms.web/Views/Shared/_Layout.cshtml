@@ -35,6 +35,7 @@
 
             <section class="content">
                 @RenderBody()
+                @Html.Partial("_MessageModal")
             </section>
         </div>
 
@@ -62,3 +63,11 @@
     })
   })
 </script>
+@if (ViewBag.submitResult != null)
+{
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#modal-default').modal('show');
+        });
+    </script>
+}
