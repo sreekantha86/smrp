@@ -1,0 +1,34 @@
+﻿@model pms.domain.User
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Update User</h3>
+    </div>
+    @using (Html.BeginForm(null, null, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="box-body">
+                @Html.HiddenFor(model => model.usrId)
+                @Html.HiddenFor(model => model.usrGUID)
+                @Html.Partial("_form", Model)
+                <div class="box-footer">
+                    <button type="button" class="btn btn-default" onclick="GotoIndex()">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Update</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    }
+</div>
+<script>
+    function GotoIndex()
+    {
+        var url = '@Url.Action("Index", "User")';
+        window.location.href = url;
+    }
+</script>

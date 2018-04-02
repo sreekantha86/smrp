@@ -1,0 +1,112 @@
+﻿@using WebHelpers.Mvc5
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        @* END Search *@
+        @* BEGIN Menu *@
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">HEADER</li>
+            <li class="@Url.IsLinkActive("Index", "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-bar-chart-o"></i> <span>DASHBORD</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("Index", "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> <span>HOME</span></a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-gear"></i> <span>Settings</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index", "User")">All Users</a></li>
+                    <li><a href="@Url.Action("Create", "User")">Add User</a></li>
+                    <li><a href="#">Edit Company Details</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cubes"></i> <span>Tenants</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">All Tenants</a></li>
+                    <li><a href="#">Add Tenant</a></li>
+                    <li><a href="#">Tenants Types</a></li>
+                    <li><a href="#">Tenants Documents</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-credit-card"></i> <span>Rentals</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">All Prperties</a></li>
+                    <li><a href="#">Add Property</a></li>
+                    <li><a href="#">All Units</a></li>
+                    <li><a href="#">Add Unit</a></li>
+                    <li><a href="#">Floor List</a></li>
+                    <li><a href="#">Add Floor</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-newspaper-o"></i> <span>Notices</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">Payment Reminders</a></li>
+                    <li><a href="#">NON Payment Notice</a></li>
+                    <li><a href="#">Cheque Bounce Notice</a></li>
+                    <li><a href="#">Rent Increase Notice</a></li>
+                    <li><a href="#">Pet Agreement</a></li>
+                    <li><a href="#">Notice to Vacate or Renew</a></li>
+                    <li><a href="#">Move Out Reminder</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-comments"></i> <span>Complaints</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">Complaints List</a></li>
+                    <li><a href="#">Add Complaint</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-book"></i> <span>Reports</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">Report 1</a></li>
+                    <li><a href="#">Report 2</a></li>
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

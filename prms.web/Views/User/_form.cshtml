@@ -1,0 +1,43 @@
+﻿@model pms.domain.User
+<div class="form-group row">
+    @Html.LabelFor(model => model.usrUserName, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-5">
+        @Html.TextBoxFor(model => model.usrUserName, new { @class = "form-control", @placeholder = "User name" })
+        @Html.ValidationMessageFor(model => model.usrUserName)
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.usrPassword, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-5">
+        @Html.TextBoxFor(model => model.usrPassword, new { @class = "form-control", @placeholder = "Password", @type = "password" })
+        @Html.ValidationMessageFor(model => model.usrPassword)
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.confirmPassword, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-5">
+        @Html.TextBoxFor(model => model.confirmPassword, new { @class = "form-control", @placeholder = "Confirm Password", @type = "password" })
+        @Html.ValidationMessageFor(model => model.confirmPassword)
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.usrEmployeeName, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-5">
+        @Html.TextBoxFor(model => model.usrEmployeeName, new { @class = "form-control", @placeholder = "Employee Name" })
+        @Html.ValidationMessageFor(model => model.usrEmployeeName)
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.usrEmail, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-5">
+        @Html.TextBoxFor(model => model.usrEmail, new { @class = "form-control", @placeholder = "e-Mail" })
+        @Html.ValidationMessageFor(model => model.usrEmail)
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.usrExpiry, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-5">
+        @Html.TextBoxFor(model => model.usrExpiry, "{0:yyyy-MM-dd}", new { @class = "form-control", @placeholder = "Expiry Date", @type = "date" })
+        @Html.ValidationMessageFor(model => model.usrExpiry)
+    </div>
+</div>

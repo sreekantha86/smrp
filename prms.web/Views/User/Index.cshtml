@@ -1,0 +1,47 @@
+﻿@model List<pms.domain.User>
+@{
+    ViewBag.Title = "Users";
+}
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">All Users</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Employee</th>
+                    <th>e-Mail</th>
+                    <th>Expiry</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.usrUserName</td>
+                        <td>@item.usrEmployeeName</td>
+                        <td>@item.usrEmail</td>
+                        <td>@item.usrExpiry.ToString("dd/MMM/yyyy")</td>
+                        <td>
+                            <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" onclick="GotoEdit('@item.usrGUID.ToString()')">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+<script>
+    function GotoEdit(Id)
+    {
+        var url = '@Url.Action("Edit","User")';
+        location.href = url + "?Id=" + Id;
+    }
+</script>
