@@ -40,7 +40,11 @@ namespace prms.web.Controllers
             int affectedRows = _repo.CreateUser(model);
             if(affectedRows >0)
             {
-                TempData["message"] = "User Saved Successfully";
+                TempData["message"] = "User Saved Successfully..!!!";
+            }
+            else
+            {
+                TempData["message"] = "Save failed. Please contact administrator.";
             }
             return RedirectToAction("Create");
         }
@@ -65,6 +69,10 @@ namespace prms.web.Controllers
             if (affectedRows > 0)
             {
                 TempData["message"] = "User Updated Successfully";
+            }
+            else
+            {
+                TempData["message"] = "Update failed. Please contact administrator.";
             }
             return RedirectToAction("Index");
         }

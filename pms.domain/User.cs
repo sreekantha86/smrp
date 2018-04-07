@@ -16,10 +16,11 @@ namespace pms.domain
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         public string usrPassword { get; set; }
-        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
+        [Compare("usrPassword", ErrorMessage = "The password and confirmation password do not match.")]
         public string confirmPassword { get; set; }
         [Required]
         [Display(Name = "Employee Name")]
